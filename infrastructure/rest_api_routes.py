@@ -1,13 +1,13 @@
 import configparser
 import connexion
 import requests
-from definitions import ROOT_DIR
 import os
+from definitions import ROOT_DIR
 
 config = configparser.ConfigParser()
 # os.path.join(ROOT_DIR, 'sources\\config.ini')
 # config.read('/sources/config.ini')
-config.read(os.path.join(ROOT_DIR, 'sources\\config.ini')) # changed to relative path to run from test folder
+config.read(os.path.join(ROOT_DIR, 'song-server-swagger\\sources\\config.ini')) # changed to relative path to run from test folder
 host = config['target']['host']
 port = config['target']['port']
 target = 'http://' + host + ':' + port
@@ -35,8 +35,6 @@ def get_playlist():
                                                             'user_password': connexion.request.args['user_password'],
                                                             'playlist_name': connexion.request.args['playlist_name']})
     return r.json()
-
-
 
 
 def add_friend(user, password, friend_to_add):
