@@ -1,6 +1,7 @@
+# Run server_main.py from infrastructure\song-server
+
 from logic import test_logic
 import pytest
-
 
 
 @pytest.mark.unique_names

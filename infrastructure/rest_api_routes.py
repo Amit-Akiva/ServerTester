@@ -22,7 +22,8 @@ def add_user(user_in):
 
 def get_user(user_param):
     #r = requests.get(url=target + '/users/get_user', params={'user_name': connexion.request.args['user_name']})
-    r = requests.get(url=target + '/users/get_user', params={'user_name': user_param})
+    # r = requests.get(url=target + '/users/get_user', params={'user_name': user_param})
+    r = requests.get(target + '/users/get_user', {'user_name': user_param})
     # print(r.request.url)
     return r.json()
 
